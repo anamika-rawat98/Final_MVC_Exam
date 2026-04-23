@@ -3,12 +3,21 @@
  * StudentID: 9087089
  */
 using BankingSystem.Web.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        options.InvalidModelStateResponseFactory = context =>
+        {
+            var errors = context.ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+            return new BadRequestObjectResult(new { error = "Invalid request body", details = errors });
+        };
+    });
 
 // Register the DbContext to use the same SQLite database as the Web project
 builder.Services.AddDbContext<BankingDbContext>(options =>

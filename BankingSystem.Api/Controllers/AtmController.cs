@@ -47,7 +47,11 @@ namespace BankingSystem.Api.Controllers
         [HttpPost("withdraw")]
         public async Task<IActionResult> Withdraw([FromBody] WithdrawRequest request)
         {
-            // Automatic validation handles Amount <= 0 via Data Annotations in DTO
+            // Explicitly check for invalid amount to return exact specified JSON format
+            if (request.Amount <= 0)
+            {
+                return BadRequest(new { error = "Amount must be greater than zero" });
+            }
 
             var account = await _repository.GetAccountByIdAsync(request.AccountId);
             if (account == null)
@@ -85,6 +89,11 @@ namespace BankingSystem.Api.Controllers
         [HttpPost("deposit")]
         public async Task<IActionResult> Deposit([FromBody] DepositRequest request)
         {
+            // Explicitly check for invalid amount to return exact specified JSON format
+            if (request.Amount <= 0)
+            {
+                return BadRequest(new { error = "Amount must be greater than zero" });
+            }
             var account = await _repository.GetAccountByIdAsync(request.AccountId);
             if (account == null)
             {
