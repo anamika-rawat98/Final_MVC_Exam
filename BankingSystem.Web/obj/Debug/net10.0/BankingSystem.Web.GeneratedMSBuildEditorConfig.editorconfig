@@ -30,6 +30,14 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
+[/Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/Views/Account/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,6 +52,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/Views/Transaction/Deposit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vRGVwb3NpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/Views/Transaction/History.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vSGlzdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/Views/Transaction/Withdraw.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNhY3Rpb24vV2l0aGRyYXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/Views/_ViewImports.cshtml]

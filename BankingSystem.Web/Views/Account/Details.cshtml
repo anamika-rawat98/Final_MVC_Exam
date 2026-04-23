@@ -1,0 +1,51 @@
+@model BankingSystem.Web.Models.Account
+
+@{
+    ViewData["Title"] = "Account Details";
+}
+
+<div class="container mt-4">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Account Details - @Model.AccountNumber</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-sm-4 fw-bold">Customer:</div>
+                        <div class="col-sm-8">@Model.Customer?.FirstName @Model.Customer?.LastName</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 fw-bold">Email:</div>
+                        <div class="col-sm-8">@Model.Customer?.Email</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 fw-bold">Account Type:</div>
+                        <div class="col-sm-8">@Model.AccountType</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 fw-bold">Current Balance:</div>
+                        <div class="col-sm-8 fs-4 text-success fw-bold">@Model.Balance.ToString("C")</div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                    <div>
+                        <a asp-controller="Transaction" asp-action="Deposit" asp-route-accountId="@Model.AccountId" class="btn btn-success">Deposit</a>
+                        <a asp-controller="Transaction" asp-action="Withdraw" asp-route-accountId="@Model.AccountId" class="btn btn-danger">Withdraw</a>
+                        <a asp-controller="Transaction" asp-action="History" asp-route-accountId="@Model.AccountId" class="btn btn-info">History</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

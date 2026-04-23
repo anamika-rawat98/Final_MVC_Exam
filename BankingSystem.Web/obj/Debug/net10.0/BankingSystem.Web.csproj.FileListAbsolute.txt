@@ -212,3 +212,4 @@
 /Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/obj/Debug/net10.0/BankingSystem.Web.pdb
 /Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/obj/Debug/net10.0/BankingSystem.Web.genruntimeconfig.cache
 /Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/obj/Debug/net10.0/ref/BankingSystem.Web.dll
+/Users/anamikarawat/Desktop/Finalllllllllll/BankingSystem/BankingSystem.Web/obj/Debug/net10.0/BankingSystem.Web.sourcelink.json

@@ -1,0 +1,52 @@
+@model BankingSystem.Web.Models.Transaction
+
+@{
+    ViewData["Title"] = "Deposit Funds";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white text-center">
+                    <h3 class="mb-0">Deposit Funds</h3>
+                    <small>Account: @ViewBag.AccountNumber</small>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info text-center mb-4">
+                        <h5 class="mb-0">Current Balance: <strong>@ViewBag.CurrentBalance.ToString("C")</strong></h5>
+                    </div>
+
+                    <form asp-action="Deposit" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                        <input type="hidden" asp-for="AccountId" />
+
+                        <div class="mb-3">
+                            <label asp-for="Amount" class="form-label font-weight-bold">Deposit Amount</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input asp-for="Amount" class="form-control form-control-lg" placeholder="0.00" />
+                            </div>
+                            <span asp-validation-for="Amount" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label">Description (Optional)</label>
+                            <textarea asp-for="Description" class="form-control" rows="2" placeholder="e.g. Monthly Savings"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-success btn-lg">Complete Deposit</button>
+                            <a asp-controller="Account" asp-action="Details" asp-route-id="@Model.AccountId" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

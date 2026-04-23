@@ -1,0 +1,48 @@
+@model IEnumerable<BankingSystem.Web.Models.Account>
+
+@{
+    ViewData["Title"] = "All Accounts";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary">Bank Accounts</h2>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Account Number</th>
+                        <th>Customer Name</th>
+                        <th>Account Type</th>
+                        <th class="text-end">Balance</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="fw-bold">@item.AccountNumber</td>
+                            <td>@item.Customer?.FirstName @item.Customer?.LastName</td>
+                            <td>
+                                <span class="badge @(item.AccountType == BankingSystem.Web.Models.AccountType.Checking ? "bg-info" : "bg-success")">
+                                    @item.AccountType
+                                </span>
+                            </td>
+                            <td class="text-end fw-bold text-success">@item.Balance.ToString("C")</td>
+                            <td class="text-center">
+                                <a asp-action="Details" asp-route-id="@item.AccountId" class="btn btn-sm btn-outline-primary">Details</a>
+                                <a asp-controller="Transaction" asp-action="Deposit" asp-route-accountId="@item.AccountId" class="btn btn-sm btn-outline-success">Deposit</a>
+                                <a asp-controller="Transaction" asp-action="Withdraw" asp-route-accountId="@item.AccountId" class="btn btn-sm btn-outline-danger">Withdraw</a>
+                                <a asp-controller="Transaction" asp-action="History" asp-route-accountId="@item.AccountId" class="btn btn-sm btn-outline-secondary">History</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

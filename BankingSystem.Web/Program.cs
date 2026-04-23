@@ -10,6 +10,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BankingDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("BankingDb")));
 
+// Register the Repository for Dependency Injection
+builder.Services.AddScoped<IBankRepository, BankRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
