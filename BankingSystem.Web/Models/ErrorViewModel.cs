@@ -1,3 +1,7 @@
+/*
+ * Name: Anamika Rawat
+ * StudentID: 9087089
+ */
 namespace BankingSystem.Web.Models;
 
 public class ErrorViewModel
